@@ -9,9 +9,7 @@ function makeNamePythonCompatible(n) {
 }
 
 module.exports = class extends Generator {
-
-  initializing() {
-  }
+  initializing() {}
 
   prompting() {
     if (this.get('silent')) return;
@@ -29,7 +27,8 @@ module.exports = class extends Generator {
           type: 'input',
           name: 'rootPackage',
           message: 'Root package name',
-          default: this.config.get('rootPackage') || makeNamePythonCompatible(this.appname)
+          default:
+            this.config.get('rootPackage') || makeNamePythonCompatible(this.appname)
         });
       }
       if (!this.get('mainModule')) {
@@ -100,8 +99,13 @@ module.exports = class extends Generator {
     this.def('authorName', 'TODO author name');
     this.def('authorEmail', 'TODO author email');
     this.def('githubUser', 'TODO github username');
-    this.def('homepage', 'https://github.com/' + this.get('githubUser') + '/' + this.get('projectName') + '/');
-    this.def('year', (new Date()).getFullYear());
+    this.def(
+      'homepage',
+      'https://github.com/' + this.get('githubUser') + '/' + this.get('projectName') + '/'
+    );
+    const date = new Date();
+    this.def('year', date.getFullYear());
+    this.def('date', date.toISOString().slice(0, 10));
 
     this.config.set(this.state);
     this.config.save();
@@ -115,12 +119,21 @@ module.exports = class extends Generator {
     this.cpTpl('CHANGELOG.rst');
 
     this.cpTpl('root_package.py', this.state.rootPackage + '/__init__.py');
-    this.cp('main_module.py', this.state.rootPackage + '/' + this.state.mainModule + '.py');
+    this.cpTpl(
+      'main_module.py',
+      this.state.rootPackage + '/' + this.state.mainModule + '.py'
+    );
     this.cpTpl('test_package.py', this.state.rootPackage + '/test/__init__.py');
-    this.cpTpl('test_module.py', this.state.rootPackage + '/test/test_' + this.state.mainModule + '.py');
+    this.cpTpl(
+      'test_module.py',
+      this.state.rootPackage + '/test/test_' + this.state.mainModule + '.py'
+    );
 
     this.cpTpl('travis-ci.yml', '.travis-ci.yml');
     this.cpTpl('auto_test.cmd', 'auto/test.cmd');
-  }
 
+    this.cpTpl('doc_index.rst', 'doc/source/index.rst');
+    this.cpTpl('doc_conf.py', 'doc/source/conf.py');
+    this.cpTpl('auto_doc_build.cmd', 'auto/doc_build.cmd');
+  }
 };

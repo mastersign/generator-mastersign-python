@@ -31,20 +31,10 @@ After this project reaches the version number 1.0.0 it will follow
 Unreleased
 ==========
 
-.. _`0.2.0`: https://https://github.com/<%= githubUser %>/<%= projectName %>/compare/v0.1.0...v0.2.0
-`0.2.0`_ - 2018-12-31
-=====================
+0.0.0 - <%= date %>
+===================
 
 Added
 -----
 
-- Feature B
-
-
-0.1.0 - 2018-12-30
-==================
-
-Added
------
-
-- Feature A
+- basic project structure
