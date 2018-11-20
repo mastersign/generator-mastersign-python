@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Tobias Kiertscher",
+      "authorEmail": "dev@mastersign.de",
+      "authorUrl": "https://www.mastersign.de/"
+    }
+  }
+}
