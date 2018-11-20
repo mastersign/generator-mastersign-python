@@ -5,7 +5,6 @@ const Generator = require('../basegen');
 const chalk = require('chalk');
 const yosay = require('yosay');
 
-
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
@@ -69,25 +68,29 @@ module.exports = class extends Generator {
   }
 
   initializing() {
-    this.set('projectName', this.options['name']);
+    this.set('projectName', this.options.name);
     this.set('rootPackage', this.options['root-package']);
     this.set('mainModule', this.options['main-module']);
-    this.set('description', this.options['description']);
+    this.set('description', this.options.description);
     this.set('homepage', this.options['project-url']);
-    this.set('authorName', this.options['author']);
-    this.set('authorEmail', this.options['email']);
+    this.set('authorName', this.options.author);
+    this.set('authorEmail', this.options.email);
     this.set('githubUser', this.options['github-user']);
 
-    this.set('silent', this.options['silent']);
+    this.set('silent', this.options.silent);
     this.set('gitAuthor', this.options['git-author'] || this.get('silent'));
   }
 
   prompting() {
-    if (!this.get('silent')) return;
+    if (this.get('silent')) return;
 
     if (!this.options.child) {
       this.log(
-        yosay(`Welcome to the ${chalk.red('Mastersign Generator')} for ${chalk.cyan('Python CLI Tools')}!`)
+        yosay(
+          `Welcome to the ${chalk.red('Mastersign Generator')} for ${chalk.cyan(
+            'Python CLI Tools'
+          )}!`
+        )
       );
     }
   }
