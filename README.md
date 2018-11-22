@@ -1,8 +1,8 @@
 # Yeoman Generator Mastersign Python
 
 [![NPM version][npm-image]][npm-url]
-<!-- [![Build Status][travis-image]][travis-url] -->
 [![Dependency Status][daviddm-image]][daviddm-url]
+<!-- [![Build Status][travis-image]][travis-url] -->
 
 > An opinionated generator for Python 3 projects
 
