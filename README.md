@@ -21,6 +21,59 @@ Then generate your new project:
 yo mastersign-python
 ```
 
+The generator supports different project flavors:
+
+* Library
+* CLI Tool
+
+### Commandline Usage for Libraries
+
+```
+Usage:
+  yo mastersign-python:library [<name>] [options]
+
+Options:
+  -h,    --help          # Print the generator's options and usage
+         --skip-cache    # Do not remember prompt answers                                 Default: false
+         --skip-install  # Do not automatically install dependencies                      Default: false
+  -p,    --root-package  # The name of the root package
+  -m,    --main-module   # The name of the main module                                    Default: core
+  -d,    --description   # Description for description
+  -u,    --project-url   # URL to the project homepage
+  -a,    --author        # The authors name
+  -e,    --email         # The authors email address
+  -gh,   --github-user   # The username for GitHub
+  -s,    --silent        # Do not ask any questions interactively
+  -g,    --git-author    # Use the authors name and email from git config without asking  Default: false
+
+Arguments:
+  name  # The name of the distribution package  Type: String  Required: false
+```
+
+### Commandline Usage for CLI Tools
+
+```
+Usage:
+  yo mastersign-python:cli [<name>] [options]
+
+Options:
+  -h,    --help          # Print the generator's options and usage
+         --skip-cache    # Do not remember prompt answers                                 Default: false
+         --skip-install  # Do not automatically install dependencies                      Default: false
+  -p,    --root-package  # The name of the root package
+  -m,    --main-module   # The name of the main module                                    Default: core
+  -d,    --description   # Description for description
+  -u,    --project-url   # URL to the project homepage
+  -a,    --author        # The authors name
+  -e,    --email         # The authors email address
+  -gh,   --github-user   # The username for GitHub
+  -s,    --silent        # Do not ask any questions interactively
+  -g,    --git-author    # Use the authors name and email from git config without asking  Default: false
+
+Arguments:
+  name  # The name of the distribution package  Type: String  Required: false
+```
+
 ## Getting To Know Yeoman
 
  * Yeoman has a heart of gold.
