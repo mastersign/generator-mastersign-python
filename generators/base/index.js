@@ -13,7 +13,10 @@ function safePackageName(n) {
 }
 
 module.exports = class extends Generator {
-  initializing() {}
+  initializing() {
+    this.def('cli', false);
+    this.def('library', false);
+  }
 
   prompting() {
     if (this.get('silent')) return;
@@ -121,6 +124,7 @@ module.exports = class extends Generator {
     this.cp('flake8.txt', '.flake8');
     this.cpTpl('LICENSE.rst');
     this.cpTpl('CHANGELOG.rst');
+    this.cpTpl('Pipfile');
 
     this.cpTpl('root_package.py', this.state.rootPackage + '/__init__.py');
     this.cpTpl(

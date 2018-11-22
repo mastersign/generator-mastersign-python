@@ -21,8 +21,14 @@ Module ``<%= rootPackage %>.<%= mainModule %>``
 
 .. automodule:: <%= rootPackage %>.<%= mainModule %>
 	:members:
+<% if (cli) { %>
+CLI Usage
+---------
 
+.. click:: <%= rootPackage %>.cli:main
+	:prog: <%= projectName %>
 
+<% } %>
 Indices and tables
 ==================
 

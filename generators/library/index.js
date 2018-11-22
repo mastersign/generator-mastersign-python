@@ -69,6 +69,8 @@ module.exports = class extends Generator {
   }
 
   initializing() {
+    this.set('library', true);
+
     this.set('projectName', this.options['name']);
     this.set('rootPackage', this.options['root-package']);
     this.set('mainModule', this.options['main-module']);

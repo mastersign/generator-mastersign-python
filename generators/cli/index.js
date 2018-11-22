@@ -68,6 +68,8 @@ module.exports = class extends Generator {
   }
 
   initializing() {
+    this.set('cli', true);
+
     this.set('projectName', this.options.name);
     this.set('rootPackage', this.options['root-package']);
     this.set('mainModule', this.options['main-module']);
@@ -103,6 +105,7 @@ module.exports = class extends Generator {
     this.cp('requirements.txt');
     this.cpTpl('setup.py');
 
+    this.cpTpl('cli_module.py', this.get('rootPackage') + '/cli.py');
     this.cpTpl('shim.cmd', 'bin/' + this.get('projectName') + '.cmd');
     this.cpTpl('shim.sh', 'bin/' + this.get('projectName') + '.sh');
   }

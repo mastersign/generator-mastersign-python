@@ -42,7 +42,8 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
-]
+<% if (cli) { %>    'sphinx_click.ext',
+<% } %>]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
