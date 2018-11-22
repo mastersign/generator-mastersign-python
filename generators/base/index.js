@@ -4,8 +4,12 @@
 const _ = require('lodash');
 const Generator = require('../basegen');
 
-function makeNamePythonCompatible(n) {
-  return n.replace(/[\s-]+/, '_');
+function safeProjectName(n) {
+  return n.replace(/[\s-]+/, '-');
+}
+
+function safePackageName(n) {
+  return n.replace(/[\s-_]+/, '_');
 }
 
 module.exports = class extends Generator {
@@ -20,7 +24,7 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'projectName',
         message: 'Project name',
-        default: this.config.get('projectName') || makeNamePythonCompatible(this.appname)
+        default: this.config.get('projectName') || safeProjectName(this.appname)
       });
       if (!this.get('rootPackage')) {
         prompts.push({
@@ -28,7 +32,7 @@ module.exports = class extends Generator {
           name: 'rootPackage',
           message: 'Root package name',
           default:
-            this.config.get('rootPackage') || makeNamePythonCompatible(this.appname)
+            this.config.get('rootPackage') || safePackageName(this.appname)
         });
       }
       if (!this.get('mainModule')) {
@@ -92,8 +96,8 @@ module.exports = class extends Generator {
   }
 
   configuring() {
-    this.def('projectName', makeNamePythonCompatible(this.appname));
-    this.def('rootPackage', this.get('projectName'));
+    this.def('projectName', safeProjectName(this.appname));
+    this.def('rootPackage', safePackageName(this.appname));
     this.def('mainModule', 'core');
     this.def('description', 'TODO short project description');
     this.def('authorName', 'TODO author name');
