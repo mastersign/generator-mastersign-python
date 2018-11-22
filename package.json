@@ -1,6 +1,6 @@
 {
   "name": "generator-mastersign-python",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "An opinionated generator for Python 3 projects",
   "homepage": "https://github.com/mastersign/generator-mastersign-python/",
   "author": {
