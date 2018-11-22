@@ -17,7 +17,7 @@ module.exports = class extends Generator {
         type: 'list',
         name: 'projectType',
         choices: ['library', 'cli'],
-        message: 'What kind of project`?',
+        message: 'What kind of project?',
         default: 'library'
       }
     ];
