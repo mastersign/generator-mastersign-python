@@ -22,6 +22,9 @@ IF ERRORLEVEL 1 (
 
 IF "%1" == "" GOTO:help
 
+IF NOT EXIST "%SOURCEDIR%\_static\" MKDIR "%SOURCEDIR%\_static"
+IF NOT EXIST "%SOURCEDIR%\_templates\" MKDIR "%SOURCEDIR%\_templates"
+
 CALL sphinx-build -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
 GOTO:end
 
