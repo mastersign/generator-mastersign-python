@@ -87,7 +87,10 @@ module.exports = class extends Generator {
 
     if (!this.options.child) {
       this.log(
-        yosay(`Welcome to the ${chalk.red('Mastersign Generator')} for ${chalk.cyan('Python Libraries')}!`)
+        yosay(
+          'Welcome to the ' + chalk.red('Mastersign Generator') + ' for ' +
+          chalk.cyan('Python Libraries') + '!'
+        )
       );
     }
   }

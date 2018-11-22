@@ -9,7 +9,10 @@ module.exports = class extends Generator {
 
   prompting() {
     this.log(
-      yosay(`Welcome to the ${chalk.red('Mastersign Generator')} for ${chalk.cyan('Python')}!`)
+      yosay(
+        'Welcome to the ' + chalk.red('Mastersign Generator') + ' for ' +
+        chalk.cyan('Python') + '!'
+      )
     );
 
     const prompts = [

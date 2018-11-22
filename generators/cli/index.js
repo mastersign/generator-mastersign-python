@@ -87,9 +87,8 @@ module.exports = class extends Generator {
     if (!this.options.child) {
       this.log(
         yosay(
-          `Welcome to the ${chalk.red('Mastersign Generator')} for ${chalk.cyan(
-            'Python CLI Tools'
-          )}!`
+          'Welcome to the ' + chalk.red('Mastersign Generator') + ' for ' +
+          chalk.cyan('Python CLI Tools') + '!'
         )
       );
     }
