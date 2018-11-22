@@ -13,7 +13,7 @@ IF %STATUS% GEQ 1 GOTO:ERROR
 CALL:UNITTEST discover
 IF %STATUS% GEQ 1 GOTO:ERROR
 
-CALL:DOCTEST <%= rootPackage %>/<%= mainModule %>.py
+CALL:DOCTEST
 IF %STATUS% GEQ 1 GOTO:ERROR
 
 GOTO:END
@@ -51,8 +51,10 @@ ECHO.
 ECHO.Running Doc Tests
 ECHO.======================================================================
 ECHO.
-CALL python -m doctest %*
+PUSHD doc
+CALL sphinx-build -M doctest source build %SPHINXOPTS%
 SET STATUS=%ERRORLEVEL%
+POPD
 IF %STATUS% == 0 ECHO.OK
 IF %STATUS% GEQ 1 EXIT /B %STATUS%
 GOTO:EOF
