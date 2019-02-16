@@ -104,6 +104,7 @@ module.exports = class extends Generator {
   writing() {
     this.cpTpl('README.rst');
     this.cp('requirements.txt');
+    this.cp('dev-requirements.txt');
     this.cpTpl('setup.py');
   }
 };

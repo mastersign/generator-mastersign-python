@@ -138,10 +138,13 @@ module.exports = class extends Generator {
     );
 
     this.cpTpl('travis-ci.yml', '.travis-ci.yml');
+    this.cpTpl('auto_pipenv-restore.cmd', 'auto/pipenv-restore.cmd');
+    this.cpTpl('auto_command-test.cmd', 'auto/command-test.cmd');
     this.cpTpl('auto_test.cmd', 'auto/test.cmd');
 
     this.cpTpl('doc_index.rst', 'doc/source/index.rst');
     this.cpTpl('doc_conf.py', 'doc/source/conf.py');
-    this.cpTpl('auto_doc_build.cmd', 'auto/doc_build.cmd');
+    this.cpTpl('auto_command-doc-build.cmd', 'auto/command-doc-build.cmd');
+    this.cpTpl('auto_doc-build.cmd', 'auto/doc-build.cmd');
   }
 };
