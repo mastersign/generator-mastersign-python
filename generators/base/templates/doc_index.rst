@@ -9,7 +9,14 @@ Welcome to <%= projectName %>'s documentation!
    :maxdepth: 2
    :caption: Contents:
 
+<% if (cli) { %>
+CLI Usage
+---------
 
+.. click:: <%= rootPackage %>.cli:main
+	:prog: <%= projectName %>
+
+<% } %>
 Module ``<%= rootPackage %>``
 -----------------------------------------------------------
 
@@ -21,14 +28,7 @@ Module ``<%= rootPackage %>.<%= mainModule %>``
 
 .. automodule:: <%= rootPackage %>.<%= mainModule %>
 	:members:
-<% if (cli) { %>
-CLI Usage
----------
 
-.. click:: <%= rootPackage %>.cli:main
-	:prog: <%= projectName %>
-
-<% } %>
 Indices and tables
 ==================
 
