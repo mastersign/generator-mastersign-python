@@ -137,7 +137,7 @@ module.exports = class extends Generator {
       this.state.rootPackage + '/test/test_' + this.state.mainModule + '.py'
     );
 
-    this.cpTpl('travis-ci.yml', '.travis-ci.yml');
+    this.cpTpl('travis.yml', '.travis.yml');
     this.cpTpl('auto_pipenv-restore.cmd', 'auto/pipenv-restore.cmd');
     this.cpTpl('auto_command-test.cmd', 'auto/command-test.cmd');
     this.cpTpl('auto_test.cmd', 'auto/test.cmd');
