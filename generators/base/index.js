@@ -146,5 +146,6 @@ module.exports = class extends Generator {
     this.cpTpl('doc_conf.py', 'doc/source/conf.py');
     this.cpTpl('auto_command-doc-build.cmd', 'auto/command-doc-build.cmd');
     this.cpTpl('auto_doc-build.cmd', 'auto/doc-build.cmd');
+    this.cpTpl('auto_doc-commit-and-push.cmd', 'auto/doc-commit-and-push.cmd');
   }
 };
