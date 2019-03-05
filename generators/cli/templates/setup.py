@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 
 import <%= rootPackage %> as root
 
