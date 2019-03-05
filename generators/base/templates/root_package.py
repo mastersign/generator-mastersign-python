@@ -4,22 +4,9 @@
 <%= description %>
 """
 
-import logging
-
-
-try:
-    from logging import NullHandler
-except ImportError:
-    class NullHandler(logging.Handler):
-        def emit(self, record):
-            pass
-
-logging.getLogger(__name__).addHandler(NullHandler())
-
-
 # package metadata
 
-__version__ = '0.0.0'
+__version__ = '0.0.0-dev'
 __url__ = '<%= homepage %>'
 __author__ = '<%= authorName %>'
 __author_email__ = '<%= authorEmail %>'
