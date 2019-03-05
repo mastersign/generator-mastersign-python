@@ -1,6 +1,7 @@
 # _*_ coding: utf-8 _*_
+
 """
-This module provides the CLI for the tool.
+This module provides the command line interface for the tool.
 """
 
 import click
