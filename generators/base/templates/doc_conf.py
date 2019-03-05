@@ -17,14 +17,16 @@ sys.path.insert(0, os.path.abspath(os.path.join('..', '..')))
 
 # -- Project information -----------------------------------------------------
 
+
+import <%= rootPackage %> as root
 project = '<%= projectName %>'
-copyright = '<%= year %>, <%= authorName %>'
-author = '<%= authorName %>'
+copyright = '<%= year %>, ' + root.__author__
+author = root.__author__
 
 # The short X.Y version
-version = '0.0'
+version = '.'.join(root.__version__.split('.')[:2])
 # The full version, including alpha/beta/rc tags
-release = '0.0.0-dev'
+release = root.__version__
 
 
 # -- General configuration ---------------------------------------------------
@@ -105,7 +107,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = '<%= projectName %>doc'
+htmlhelp_basename = '<%= projectName %>-doc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -133,7 +135,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, '<%= projectName %>.tex', '<%= projectName %> Documentation',
-     'Tobias Kiertscher', 'manual'),
+     author, 'manual'),
 ]
 
 

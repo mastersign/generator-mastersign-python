@@ -3,7 +3,7 @@
 import os
 from setuptools import setup, find_packages
 
-import <%= rootPackage %>
+import <%= rootPackage %> as root
 
 
 def read_info_files(*names):
@@ -41,10 +41,10 @@ data_files = None
 
 setup(
     name='<%= projectName %>',
-    version=<%= rootPackage %>.__version__,
-    description=<%= rootPackage %>.__doc__.strip().replace('\n', ' '),
+    version=root.__version__,
+    description=root.__doc__.strip().replace('\n', ' '),
     long_description=long_description,
-    keywords=' '.join(<%= rootPackage %>.__keywords__),
+    keywords=' '.join(root.__keywords__),
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Users',
@@ -53,17 +53,15 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
     ],
-    url=<%= rootPackage %>.__url__,
-    author=<%= rootPackage %>.__author__,
-    author_email=<%= rootPackage %>.__author_email__,
-    maintainer=<%= rootPackage %>.__maintainer__,
-    maintainer_email=<%= rootPackage %>.__maintainer_email__,
+    url=root.__url__,
+    author=root.__author__,
+    author_email=root.__author_email__,
+    maintainer=root.__maintainer__,
+    maintainer_email=root.__maintainer_email__,
     license='BSD-3',
-    packages=find_packages(),
+    packages=find_namespace_packages(include=['<%= rootPackage %>']),
     data_files=data_files,
     entry_points={
         'console_scripts': [
