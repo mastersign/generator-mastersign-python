@@ -1,8 +1,4 @@
-*******
-License
-*******
-
-This project is licensed under the *3-Clause BSD License*.
+This project is licensed under the 3-Clause BSD License.
 
 Copyright © <%= year %> <%= authorName %> <%= authorEmail %>.
 

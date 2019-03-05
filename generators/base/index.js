@@ -122,7 +122,7 @@ module.exports = class extends Generator {
     this.cp('gitignore.txt', '.gitignore');
     this.cp('gitattributes.txt', '.gitattributes');
     this.cp('flake8.txt', '.flake8');
-    this.cpTpl('LICENSE.rst');
+    this.cpTpl('LICENSE');
     this.cpTpl('CHANGELOG.rst');
     this.cpTpl('Pipfile');
 
