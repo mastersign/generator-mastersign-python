@@ -14,9 +14,10 @@ function assert_command() {
 assert_command pipenv
 
 if [[ -f Pipfile.lock ]]; then
-    pipenv sync --dev
+    exec pipenv sync --dev
 else
     pipenv install -r requirements.txt --pre
     if [[ $? -ne 0 ]]; then exit 1; fi
     pipenv install --dev -r dev-requirements.txt
+    if [[ $? -ne 0 ]]; then exit 1; fi
 fi
