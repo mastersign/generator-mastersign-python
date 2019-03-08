@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath(os.path.join('..', '..')))
 # -- Project information -----------------------------------------------------
 
 
-import <%= rootPackage %> as root
+import <%= rootPackage %> as root  # noqa E402
 project = '<%= projectName %>'
 copyright = '<%= year %>, ' + root.__author__
 author = root.__author__
